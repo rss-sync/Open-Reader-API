@@ -22,6 +22,7 @@ compile '*' do
     # don’t filter binary items
   else
     filter :erb
+    filter :kramdown, :toc_levels => [2]
     layout 'default'
   end
 end

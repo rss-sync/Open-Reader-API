@@ -37,7 +37,7 @@ h2 {
   position: absolute;
 
   top: 40px;
-  left: 280px;
+  left: 20px;
 
   width: 500px;
 }
@@ -45,17 +45,13 @@ h2 {
 #main h1 {
   font-size: 40px;
   font-weight: normal;
-
   line-height: 40px;
-
   letter-spacing: -1px;
 }
 
 #main p {
   margin: 20px 0;
-
   font-size: 15px;
-
   line-height: 20px;
 }
 
@@ -65,7 +61,6 @@ h2 {
 
 #main li {
   font-size: 15px;
-
   line-height: 20px;
   list-style-position: inside;
 }
@@ -78,14 +73,12 @@ h2 {
   position: absolute;
 
   top: 40px;
-  left: 20px;
+  left: 540px;
   width: 200px;
 
-  padding: 20px 20px 0 0;
+  padding: 20px 0 0 20px;
 
-  border-right: 1px solid #ccc;
-
-  text-align: right;
+  border-left: 1px solid #ccc;
 }
 
 #sidebar h2 {

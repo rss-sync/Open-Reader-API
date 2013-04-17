@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
 
-  font-family: Georgia, Palatino, Times, 'Times New Roman', serif;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -11,17 +10,14 @@ body {
   color: #111;
 }
 
-a {
+a:link,
+a:visited {
+  color: #ff7c1b;
   text-decoration: none;
 }
 
-a:link,
-a:visited {
-  color: #f30;
-}
-
 a:hover {
-  color: #f90;
+  text-decoration: underline;
 }
 
 h1,
@@ -168,4 +164,8 @@ dd {
 
 #main dd ul {
   margin: 10px 0 10px 5px;
+}
+
+#main #markdown-toc {
+  margin-left: 0;
 }

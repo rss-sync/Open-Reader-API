@@ -32,9 +32,17 @@ h2 {
   font-size: 1.5em;
 }
 
+#header-wrapper{
+  padding: 20px 40px;
+}
+
+#site-title {
+  font-size: 40px;
+}
+
 #main {
   position: absolute;
-  top: 40px;
+  top: 80px;
   left: 40px;
   width: 500px;
 }
@@ -68,7 +76,7 @@ h2 {
 
 #sidebar {
   position: absolute;
-  top: 40px;
+  top: 80px;
   left: 580px;
   width: 200px;
   padding: 0 0 0 20px;

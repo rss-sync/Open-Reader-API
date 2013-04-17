@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Generic Reader API - Subscription</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.2"> 
+  </head>
+  <body>
+    <div id="header-wrapper">
+        <div id="site-title">Generic Reader API</div>
+    </div>
+    <div id="main">
+      <h1 id="subscription">Subscription</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#list-subscriptions">List Subscriptions</a></li>
+  <li><a href="#edit-subscription">Edit Subscription</a></li>
+  <li><a href="#quick-add-subscription">Quick Add Subscription</a></li>
+  <li><a href="#export-subscriptions">Export Subscriptions</a></li>
+  <li><a href="#check-subscribed-status">Check Subscribed Status</a></li>
+</ul>
+
+<h2 id="list-subscriptions">List Subscriptions</h2>
+
+<pre><code>GET /subscription/list
+</code></pre>
+
+<h3 id="authentication">Authentication</h3>
+
+<pre><code>Required
+</code></pre>
+
+<h3 id="request-parameters">Request Parameters</h3>
+
+<dl>
+  <dt>ck</dt>
+  <dd><code>timestamp</code>: Current timestamp to prevent caching issues.</dd>
+  <dt>client</dt>
+  <dd><code>application name</code>: String that identifies the client used.</dd>
+</dl>
+
+<h3 id="response">Response</h3>
+
+<pre><code>{
+  "subscriptions": [
+    {
+      "id": "feed/http://feeds.feedburner.com/MyMicro-isv",
+      "title": "47 Hats",
+      "categories": [],
+      "sortid": "FB039968",
+      "firstitemmsec": "1252975023032"
+    },
+    {
+      "id": "feed/http://www.amazon.com/rss/new-releases/books/5/ref=pd_nr_rss_link",
+      "title": "Amazon.com: Hot New Releases in Books &gt; Computers &amp; Internet",
+      "categories": [],
+      "sortid": "77E40AE6",
+      "firstitemmsec": "1262159994543"
+    },
+    {
+      "id": "feed/http://blog.cartercole.com/feeds/posts/default?orderby=updated",
+      "title": "Carter Cole's Blog",
+      "categories": [],
+      "sortid": "0B6626E4",
+      "firstitemmsec": "1280455399985"
+    },
+    {
+      "id": "feed/http://feed.feedsky.com/CWUfeed",
+      "title": "China Web Updates",
+      "categories": [],
+      "sortid": "E53C4858",
+      "firstitemmsec": "1252598589828"
+    },
+    {
+      "id": "feed/http://feeds.feedburner.com/cwr",
+      "title": "China Web2.0 Review",
+      "categories": [],
+      "sortid": "2EF2197E",
+      "firstitemmsec": "1239983501546"
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="edit-subscription">Edit Subscription</h2>
+
+<pre><code>POST /subscription/edit
+</code></pre>
+
+<h3 id="authentication-1">Authentication</h3>
+
+<pre><code>Required
+</code></pre>
+
+<h3 id="request-parameters-1">Request Parameters</h3>
+
+<dl>
+  <dt>ck</dt>
+  <dd><code>timestamp</code>: Current timestamp to prevent caching issues.</dd>
+  <dt>client</dt>
+  <dd><code>application name</code>: String that identifies the client used.</dd>
+</dl>
+
+<h3 id="post-parameters">Post Parameters</h3>
+
+<dl>
+  <dt>s</dt>
+  <dd><code>stream id</code>: The feed that is to be edited.</dd>
+  <dt>T</dt>
+  <dd><code>token</code>: Authentication token</dd>
+  <dt>ac</dt>
+  <dd>Action to perform: <code>subscribe</code>, <code>unsubscribe</code>, or <code>edit</code>.</dd>
+  <dt>a</dt>
+  <dd><code>tag</code>: Add a new tag</dd>
+  <dt>r</dt>
+  <dd><code>tag</code>: Remove an existing tag</dd>
+  <dt>t</dt>
+  <dd><code>feed title</code></dd>
+</dl>
+
+<h3 id="response-1">Response</h3>
+
+<pre><code>OK
+</code></pre>
+
+<h2 id="quick-add-subscription">Quick Add Subscription</h2>
+
+<p>This endpoint allows the quick subscription of a feed where no title or tags are specified.</p>
+
+<pre><code>POST /subscription/quickadd
+</code></pre>
+
+<h3 id="authentication-2">Authentication</h3>
+
+<pre><code>Required
+</code></pre>
+
+<h3 id="request-parameters-2">Request Parameters</h3>
+
+<dl>
+  <dt>ck</dt>
+  <dd><code>timestamp</code>: Current timestamp to prevent caching issues.</dd>
+  <dt>client</dt>
+  <dd><code>application name</code>: String that identifies the client used.</dd>
+</dl>
+
+<h3 id="post-parameters-1">Post Parameters</h3>
+
+<dl>
+  <dt>quickadd</dt>
+  <dd><code>stream id</code>: The feed that is to be subscribed to.</dd>
+  <dt>T</dt>
+  <dd><code>token</code>: Authentication token</dd>
+</dl>
+
+<h3 id="response-2">Response</h3>
+
+<pre><code>OK
+</code></pre>
+
+<h2 id="export-subscriptions">Export Subscriptions</h2>
+
+<pre><code>GET /subscriptions/export
+</code></pre>
+
+<h3 id="authentication-3">Authentication</h3>
+
+<pre><code>Required
+</code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<p>OPML file of all subscriptions belonging to the authenticated user.</p>
+
+<h2 id="check-subscribed-status">Check Subscribed Status</h2>
+
+<p>Check if a user is subscribed to a specific feed already.</p>
+
+<pre><code>GET /subscribed
+</code></pre>
+
+<h3 id="request-parameters-3">Request Parameters</h3>
+
+<dl>
+  <dt>s</dt>
+  <dd><code>stream id</code>: The feed that is to be checked.</dd>
+</dl>
+
+<h3 id="response-4">Response</h3>
+
+<pre><code>Boolean
+</code></pre>
+
+    </div>
+    <div id="sidebar">
+        <div id="nav">
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="/">Overview</a></li>
+            <li><a href="/subscription">Subscription</a></li>
+            <li><a href="/stream">Stream</a></li>
+            <li><a href="/tag">Tag</a></li>
+            <li><a href="/authentication">Authentication</a></li>
+          </ul>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="http://lists.ranchero.com/listinfo.cgi/rss-sync-ranchero.com">RSS Sync Mailing List</a></li>
+          </ul>
+      </div>
+      <div id="github">
+        <p>This website is a <a href="https://github.com/rss-sync/Generic-Reader-API" target="_blank">public GitHub repository</a>. Please help out by forking the project and adding to it.</p>
+      </div>
+    </div>
+  </body>
+</html>

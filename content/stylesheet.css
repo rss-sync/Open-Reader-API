@@ -32,6 +32,12 @@ h2 {
   font-size: 1.5em;
 }
 
+#main h2 {
+  margin-top: 60px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
 #header-wrapper{
   padding: 20px 40px;
 }

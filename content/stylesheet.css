@@ -80,6 +80,11 @@ h2 {
   list-style-type: disc;
 }
 
+#main li ol, 
+#main li ul {
+  margin-left: 20px !important;
+}
+
 #sidebar {
   position: absolute;
   top: 80px;

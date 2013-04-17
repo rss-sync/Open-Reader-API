@@ -78,8 +78,11 @@ h2 {
   position: absolute;
   top: 80px;
   left: 580px;
-  width: 200px;
-  padding: 0 0 0 20px;
+  width: 300px;
+}
+
+#sidebar #nav {
+  padding: 10px 0 10px 20px;
   border-left: 1px solid #ccc;
 }
 
@@ -158,4 +161,11 @@ dd {
 
 #main #markdown-toc {
   margin-left: 0;
+}
+
+#sidebar #github {
+  margin: 40px 0;
+  font-size: 13px;
+  border: 1px solid #cacaca;
+  padding: 10px;
 }

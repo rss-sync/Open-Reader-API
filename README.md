@@ -1,6 +1,6 @@
 # Generic Reader API
 
-This is the repo for **[Temp Url](http://example.com)** and is built with [nanoc](http://nanoc.ws/).
+This is the repo for the **[Generic Reader API](http://rss-sync.github.com/Generic-Reader-API)** and is built with [nanoc](http://nanoc.ws/).
 
 All submissions are encouraged. To submit a change, fork this repository, commit your changes and send a [pull request](https://help.github.com/articles/using-pull-requests).
 

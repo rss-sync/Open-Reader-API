@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>A Brand New nanoc Site - Home</title>
+    <title>Generic Reader API - Subscription</title>
     <link rel="stylesheet" href="/style.css">
 
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -10,10 +10,10 @@
   </head>
   <body>
     <div id="main">
-      <h1 id="a-brand-new-nanoc-site">A Brand New nanoc Site</h1>
+      <h1 id="subscription">Subscription</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#this-is-a-second-heading">This is a second heading</a></li>
+  <li><a href="#list-subscriptions">List Subscriptions</a></li>
 </ul>
 
 <p>You’ve just created a new nanoc site. The page you are looking at right now is the home page for your site. To get started, consider replacing this default homepage with your own customized homepage. Some pointers on how to do so:</p>
@@ -25,11 +25,75 @@
 
 <p>If you need any help with customizing your nanoc web site, be sure to check out the documentation (see sidebar), and be sure to subscribe to the discussion group (also see sidebar). Enjoy!</p>
 
-<h2 id="this-is-a-second-heading">This is a second heading</h2>
+<h2 id="list-subscriptions">List Subscriptions</h2>
+
+<p>List all subscriptions for the current authenticated user</p>
+
+<pre><code>GET /subscription/list
+</code></pre>
 
 <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
 <p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+  <dt>client</dt>
+  <dd><code>application name</code></dd>
+  <dt>ck</dt>
+  <dd><code>timestamp</code></dd>
+  <dt>source</dt>
+  <dd>
+    <ul>
+      <li><code>RECOMMENDATION</code>: subscribed from recommendation</li>
+      <li><code>SUBSCRIBE_BUTTON</code>: when you clicked the subscribe button</li>
+    </ul>
+  </dd>
+</dl>
+
+<h3 id="response">Response</h3>
+
+<pre><code>{
+  "subscriptions": [
+    {
+      "id": "feed/http://feeds.feedburner.com/MyMicro-isv",
+      "title": "47 Hats",
+      "categories": [],
+      "sortid": "FB039968",
+      "firstitemmsec": "1252975023032"
+    },
+    {
+      "id": "feed/http://www.amazon.com/rss/new-releases/books/5/ref=pd_nr_rss_link",
+      "title": "Amazon.com: Hot New Releases in Books &gt; Computers &amp; Internet",
+      "categories": [],
+      "sortid": "77E40AE6",
+      "firstitemmsec": "1262159994543"
+    },
+    {
+      "id": "feed/http://blog.cartercole.com/feeds/posts/default?orderby=updated",
+      "title": "Carter Cole's Blog",
+      "categories": [],
+      "sortid": "0B6626E4",
+      "firstitemmsec": "1280455399985"
+    },
+    {
+      "id": "feed/http://feed.feedsky.com/CWUfeed",
+      "title": "China Web Updates",
+      "categories": [],
+      "sortid": "E53C4858",
+      "firstitemmsec": "1252598589828"
+    },
+    {
+      "id": "feed/http://feeds.feedburner.com/cwr",
+      "title": "China Web2.0 Review",
+      "categories": [],
+      "sortid": "2EF2197E",
+      "firstitemmsec": "1239983501546"
+    }
+  ]
+}
+</code></pre>
 
     </div>
     <div id="sidebar">

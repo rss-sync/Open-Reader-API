@@ -7,6 +7,8 @@
 body {
   background: #fdfdfd;
   color: #111;
+  font-size: 15px;
+  line-height: 22px;
 }
 
 a:link,
@@ -62,7 +64,6 @@ h2 {
 
 #main p {
   margin: 20px 0;
-  font-size: 15px;
   line-height: 20px;
 }
 
@@ -71,9 +72,7 @@ h2 {
 }
 
 #main li {
-  font-size: 15px;
-  line-height: 20px;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 #main ul li {
@@ -83,6 +82,7 @@ h2 {
 #main li ol, 
 #main li ul {
   margin-left: 20px !important;
+  margin-top: 0;
 }
 
 #sidebar {
@@ -171,7 +171,6 @@ dd {
 }
 
 #main #markdown-toc {
-  margin-left: 0;
 }
 
 #sidebar #github {
@@ -179,4 +178,10 @@ dd {
   font-size: 13px;
   border: 1px solid #cacaca;
   padding: 10px;
+}
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
 }

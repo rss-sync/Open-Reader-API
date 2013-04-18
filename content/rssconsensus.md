@@ -21,7 +21,7 @@ A format war would be devastating for the RSS ecosystem. We take it for granted 
 
 All this when we instead could share a common platform and could be:
 
-* Fighting for new users, not just the existing Google Reader users. *»Reader is (was?) for information junkies; not just tech nerds. This market totally exists and is weirdly under-served (and is possibly affluent)«*[&#x21ac;][n9] as Chris Wethrell writes.
+* Fighting for new users, not just the existing Google Reader users. *»Reader is (was?) for information junkies; not just tech nerds. This market totally exists and is weirdly under-served (and is possibly affluent)«*[&#x21ac;][n9] as Chris Wetherell writes.
 * Convincing those many still, profoundly unaware of the great benefits of RSS, to come join in and experience. Experience benefits you and I enjoy everday. However it might require a [great deal of explaining][n10] to give RSS general consumer appeal.
 * Competing on creating great products, not on creating lock-ins. 
 

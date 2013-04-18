@@ -10,6 +10,8 @@ Making contributions or changes is easy. Clone this repo, alter the content with
 
 All content is created in plain text using the [Markdown](http://daringfireball.net/projects/markdown/) syntax. The folder structure will define the end url path structure so keep that in mind if new files and folders are added.
 
+The final display on http://rss-sync.github.io/Open-Reader-API is updated as needed manually using nanoc.
+
 ## Style Guide
 
 Markdown file extensions should be `.md`

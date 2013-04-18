@@ -1,4 +1,3 @@
-
 ---
 title: Resources
 ---
@@ -10,12 +9,23 @@ title: Resources
 
 ## API documentations
 
-* [undocgoogle 1.0 documentation](http://undoc.in) by Daniel – This information is unofficial and subject to change. Some resource about Google Reader api is available, but unfortunately a lot of the information in that document is outdated, so I trying to gather these info and update it.
-* [Google Reader API Documentation](https://code.google.com/p/pyrfeed/wiki/GoogleReaderAPI) via pyrfeed – This document is totally unofficial. You should not rely on anything on this document is you need an exact information. This document has been made mainly by reverse engeneering the protocol.
-* [Google Reader API Documentation](http://inessential.com/2013/03/14/google_reader_api_documentation) by Nick Bradbury – It’s from 2009. Parts of it are surely out-of-date (authentication, for sure), and it was written with the expectation that the reader is familiar with NewsGator syncing.
-* [Google Reader API Documentation](http://code.google.com/p/google-reader-api/w/list) by Mihai Parparita - Hosts documentation and the issue tracker for the (unofficial) Google Reader API.
-* [Fever API Public Beta](http://www.feedafever.com/api) – This API is in public beta and currently supports basic syncing and consuming of content.
-* [FeedSink API](http://rss-sync.github.io/Open-Reader-API/resources/feedsink-api/) by Avi Flax of Arc90 – "… some ideas for a feed syncing API. My firm and I have decided to drop it, so I thought I’d share my documentation ... just in case it might somehow prove even slightly useful."
+[undocgoogle 1.0 documentation](http://undoc.in) by Daniel
+: This information is unofficial and subject to change. Some resource about Google Reader api is available, but unfortunately a lot of the information in that document is outdated, so I trying to gather these info and update it.
+
+[Google Reader API Documentation](https://code.google.com/p/pyrfeed/wiki/GoogleReaderAPI) via pyrfeed
+: This document is totally unofficial. You should not rely on anything on this document is you need an exact information. This document has been made mainly by reverse engeneering the protocol.
+
+[Google Reader API Documentation](http://inessential.com/2013/03/14/google_reader_api_documentation) by Nick Bradbury
+: It’s from 2009. Parts of it are surely out-of-date (authentication, for sure), and it was written with the expectation that the reader is familiar with NewsGator syncing.
+
+[Google Reader API Documentation](http://code.google.com/p/google-reader-api/w/list) by Mihai Parparita
+: Hosts documentation and the issue tracker for the (unofficial) Google Reader API.
+
+[Fever API Public Beta](http://www.feedafever.com/api)
+: This API is in public beta and currently supports basic syncing and consuming of content.
+
+[FeedSink API](/Open-Reader-API/resources/feedsink-api/) by Avi Flax of Arc90
+: "… some ideas for a feed syncing API. My firm and I have decided to drop it, so I thought I’d share my documentation ... just in case it might somehow prove even slightly useful."
 
 ## Miscellaneous
 

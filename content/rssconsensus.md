@@ -13,9 +13,9 @@ First of congratulations! The shutdown of Google Reader has created the perfect 
 
 Right now you are probably preoccupied with pushing releases and keeping servers running smoothly. But I would nonetheless like to call your attention to the following issue: **The lack of consensus, among RSS Syncing Platforms, on a new common API format.**
 
-The fact is we are leaving *»the de facto standard for RSS readers, and, as such, [Google Reader] was used as a platform for others to build upon«*[&#x21ac;][n2]. And entering a fragmented market with lots of feed-syncing platforms (I count at least half a dozen already). This puts us at the brink of war, e.g. a new [format war][n3] that, if it breaks out, will 1) take end-users as hostages, 2) discourage other developers from building upon the technology, and 3) erode any progress and innovation you might otherwise be bringing to the table.
+Google Reader was the de facto standard and was thus used as a platform for others to build upon[&#x21ac;][n2]. With its upcoming shutdown, we are entering a fragmented market of feed-syncing platforms (I count at least half a dozen already). This puts us at the brink of war, e.g. a new [format war][n3] that, if it breaks out, will 1) take end-users as hostages, 2) discourage other developers from building upon the technology, and 3) erode any progress and innovation you might otherwise be bringing to the table.
 
-A format war would be devastatingly destroying for the RSS ecosystem. We take it for granted now that content providers put up RSS feeds. But this is not a given. They will only do so long as it's worth their effort and it drives traffic.
+A format war would be devastating for the RSS ecosystem. We take it for granted now that content providers put up RSS feeds. But this is not a given. They will only do so long as it's worth their effort and it drives traffic.
 
 > The more people used Reader, the more attractive it was to have an RSS feed and to write posts in feed-friendly ways. And the more people provided RSS content and structured online interactions around the blogs that pass through RSS, the more attractive it became to be a part of that ecosystem. If you then pull away the product at the heart of that system, you end up causing significant disruption … [&#x21ac; Google's Google problem][n7]
 

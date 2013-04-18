@@ -1,0 +1,493 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Open Reader API - </title>
+    <link rel="stylesheet" href="/Open-Reader-API/style.css">
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.2"> 
+  </head>
+  <body>
+    <div id="header-wrapper">
+        <div id="site-title">Open Reader API</div>
+    </div>
+    <div id="main">
+      <h1 id="feedsink-api">FeedSink API</h1>
+
+<p>by Avi Flax <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#097;&#118;&#105;&#102;&#064;&#097;&#114;&#099;&#057;&#048;&#046;&#099;&#111;&#109;">&#097;&#118;&#105;&#102;&#064;&#097;&#114;&#099;&#057;&#048;&#046;&#099;&#111;&#109;</a> of <a href="http://arc90.com">Arc90</a></p>
+
+<p>This document is copyright © 2013 Arc90, Inc. — but APIs themselves are not subject to copyright, so feel free to implement
+or reuse the actual API design for any purpose.</p>
+
+<p>This document is licensed to anyone to do anything with. No rights reserved.</p>
+
+<h2 id="authentication">Authentication</h2>
+<p>TBD</p>
+
+<h2 id="use-cases">Use Cases</h2>
+
+<h3 id="as-a-client-i-was-just-launched-so-i-want-to-retrieve-all-the-changes-the-user-made-since-the-last-time-i-checked">As a client, I was just launched, so I want to retrieve all the changes the user made since the last time I checked</h3>
+
+<h4 id="request">Request</h4>
+
+<ul>
+  <li>Send a GET request to the resource “a user’s changes since {date-time}”
+    <ul>
+      <li>example path: <code>/users/{user-id}/changes-since-2013-03-18T21:34:22-04:00</code></li>
+    </ul>
+  </li>
+  <li>The request header <code>Accept</code> must be <code>application/json; schema=feedsink.user-changes.v.1.0</code></li>
+</ul>
+
+<h4 id="success-response">Success Response</h4>
+
+<ul>
+  <li>The response header <code>Content-Type</code> will be <code>application/json; schema=feedsink.user-changes.v1.0</code></li>
+</ul>
+
+<p>The response entity will be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "feeds": {
+        "added": [
+            {
+                uri: "http://aviflax.com/feed",
+                name: "Avi’s Rad Blog",
+                "tags": ["racing" "friends"]
+            },
+            {
+                uri: "http://aviflax.com/feed",
+                name: "Avi’s Rad Blog",
+                "tags": ["racing" "friends"]
+            }
+        ],
+        "deleted": [
+            "http//feed.zombo.com/"
+        ],
+        "updated": [
+            {
+                uri: "http://aviflax.com/feed",
+                name: "Avi’s Rad Blog",
+                "tags": ["racing" "friends"]
+            },
+            {
+                uri: "http://aviflax.com/feed",
+                name: "Avi’s Rad Blog",
+                "tags": ["racing" "friends"]
+            }
+        ]
+    },
+    "feed-entries": {
+        "http://aviflax.com/feed": {
+            "read": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ],
+            "unread": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ],
+            "starred": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ],
+            "unstarred": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ]
+        },
+        "http://arc90.com/blog/entries?format=atom": {
+            "read": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ],
+            "unread": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ],
+            "starred": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ],
+            "unstarred": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ]
+        }
+    }
+}
+</code></pre>
+
+<h4 id="error-responses">Error Responses</h4>
+<p>TBD</p>
+
+<h3 id="as-a-client-i-just-downloaded-new-entries-from-one-of-a-users-feeds-and-i-want-to-check-whether-any-of-them-have-been-read-already-so-that-i-dont-show-the-user-entries-they-already-read">As a client, I just downloaded new entries from one of a user’s feeds, and I want to check whether any of them have been read already, so that I don’t show the user entries they already read</h3>
+
+<h4 id="request-1">Request</h4>
+
+<ul>
+  <li>Send a GET request to the resource “a user’s read entries for feed {uri}”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds/{uri}/entries/read</code></li>
+    </ul>
+  </li>
+  <li>The request header <code>Accept</code> must be <code>application/json; schema=feedsink.read-entries.v1.0</code></li>
+</ul>
+
+<h4 id="success-response-1">Success Response</h4>
+
+<ul>
+  <li>The response header <code>Content-Type</code> will be <code>application/json; schema=feedsink.read-entries.v1.0</code></li>
+</ul>
+
+<p>The response entity will be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "read_entries": [
+        'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+        'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+        'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+    ]
+}
+</code></pre>
+
+<h4 id="error-responses-1">Error Responses</h4>
+<p>TBD</p>
+
+<h3 id="set-the-readunreadstarredunstarred-status-for-entries-from-one-of-a-users-feeds">Set the read/unread/starred/unstarred status for entries from one of a user’s feeds</h3>
+
+<ul>
+  <li>so their status is the preserved if they switch to a different device or app</li>
+</ul>
+
+<h4 id="request-2">Request</h4>
+
+<ul>
+  <li>Send a POST request to the resource “a user’s entries for feed {uri}”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds/{uri}/entries</code></li>
+    </ul>
+  </li>
+  <li>The value of the request header <code>Content-Type</code> must be <code>application/json; schema=feedsink.statuschanges.v1.0</code></li>
+</ul>
+
+<p>The request entity should be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "read": [
+        // tuples of entry_id and user_action_date
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ],
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ]
+    ],  
+    "unread": [
+        // tuples of entry_id and user_action_date
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ],
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ]
+    ],
+    "starred": [
+        // tuples of entry_id and user_action_date
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ],
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ]
+    ],
+    "unstarred": [
+        // tuples of entry_id and user_action_date
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ],
+        [
+            'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+            '2013-03-12T23:22:11-04:00'
+        ]
+    ],
+}
+</code></pre>
+
+<ul>
+  <li>The entity should not include all entries for the feed, rather only those which the client wishes to set the status of</li>
+  <li><code>user_action_date</code> is included so the service can discard user actions which it recieves out of order.</li>
+  <li>The elements of the arrays <code>read</code> and <code>unread</code> are tuples rather than objects so as to minimize data size
+    <ul>
+      <li>mobile clients will be uploading this representation and it’s important to try to keep the uploads small</li>
+      <li>most (maybe all) HTTP client libraries don’t support compressing request entities</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="success-response-2">Success Response</h4>
+
+<ul>
+  <li>If the request is successful, you will receive either a 204 or 202 response</li>
+</ul>
+
+<h4 id="error-responses-2">Error Responses</h4>
+<p>TBD</p>
+
+<h3 id="retrieve-the-list-of-all-of-a-users-feeds">Retrieve the list of all of a user’s feeds</h3>
+
+<ul>
+  <li>Each feed should include a list of the N most recent read entries so they can be filtered out without making a ton of additional requests</li>
+</ul>
+
+<h4 id="request-3">Request</h4>
+
+<ul>
+  <li>Send a GET request to the resource “a user’s feeds”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds</code></li>
+    </ul>
+  </li>
+  <li>The request header <code>Accept</code> must be <code>application/json; schema=feedsink.feed-list.v1.0</code></li>
+</ul>
+
+<h4 id="success-response-3">Success Response</h4>
+
+<p>The response header <code>Content-Type</code> will be <code>application/json; schema=feedsink.feed-list.v1.0</code></p>
+
+<p>The response entity will be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "feeds": [
+        {
+            "uri": "http://aviflax.com/feed",
+            "name": "Avi’s Silly Blog",
+            "tags": ["favorites"],
+            "read_entries": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ]
+        },
+        {
+            "uri": "http://arc90.com/feed",
+            "name": "Arc90 Blog",
+            "tags": ["river", "arc"],
+            "read_entries": [
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a',
+                'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a'
+            ]
+        }
+    ]
+}
+</code></pre>
+
+<h4 id="error-responses-3">Error Responses</h4>
+<p>TBD</p>
+
+<h3 id="add-a-feed-to-a-users-list-of-feeds">Add a feed to a user’s list of feeds</h3>
+
+<h4 id="request-4">Request</h4>
+
+<ul>
+  <li>Send a PUT request to the resource “the feed {uri} of a user”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds/{feed-uri}</code></li>
+    </ul>
+  </li>
+  <li>The request header <code>Content-Type</code> must be <code>application/json; schema=feedsink.feed.v1.0</code></li>
+</ul>
+
+<p>The request entity should be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "uri": "http://aviflax.com/feed",
+    "name": "Avi’s Silly Blog",
+    "tags": ["river", "arc/staff"],
+}
+</code></pre>
+
+<p>Please note that a tag may contain <code>/</code> to denote that it is heirarchical.</p>
+
+<h4 id="success-response-4">Success Response</h4>
+
+<ul>
+  <li>The status code will be either 201 or 202</li>
+  <li>There will be no entity</li>
+</ul>
+
+<h4 id="error-responses-4">Error Responses</h4>
+<ul>
+  <li>TBD</li>
+</ul>
+
+<h3 id="remove-a-feed-from-a-users-list-of-feeds">Remove a feed from a user’s list of feeds</h3>
+
+<h4 id="request-5">Request</h4>
+
+<ul>
+  <li>Send a DELETE request to the resource “the feed {uri} of user {user-id}”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds/{feed-uri}</code></li>
+    </ul>
+  </li>
+  <li>The request header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.28"><code>If-Unmodified-Since</code></a> must be included
+    <ul>
+      <li>the value should be the date-time at which the user initiated the deletion</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="success-response-5">Success Response</h4>
+
+<ul>
+  <li>The status code will be either 202 or 204</li>
+  <li>There will be no entity</li>
+</ul>
+
+<h4 id="error-responses-5">Error Responses</h4>
+<p>TBD</p>
+
+<h3 id="add-multiple-feeds-to-a-users-list-of-feeds">Add multiple feeds to a user’s list of feeds</h3>
+
+<ul>
+  <li>This is intended for the “import” use-case wherein a user is adopting the API for the first time, and wishes to import their feed list from another application or service</li>
+  <li>Clients are recommended to use this method only when they have a significant number of feeds to add at once
+    <ul>
+      <li>Otherwise, PUT requests to the resource “the feed {uri} of user {user-id}” are recommended, as they are idempotent and therefore less likely to result in an undesired outcome, as in the case of an error they can be safely resent</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="request-6">Request</h4>
+
+<ul>
+  <li>Send a POST request to the resouce “a user’s feeds”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds</code></li>
+    </ul>
+  </li>
+  <li>The request header <code>Content-Type</code> must be <code>application/json; schema=feedsink.feed-list.v1.0</code></li>
+</ul>
+
+<p>The request entity should be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "feeds": [
+        {
+            "uri": "http://aviflax.com/feed",
+            "name": "Avi’s Silly Blog",
+            "tags": ["favorites"]
+        },
+        {
+            "uri": "http://arc90.com/feed",
+            "name": "Arc90 Blog",
+            "tags": ["river", "arc"]
+        }
+    ]
+}
+</code></pre>
+
+<h4 id="success-response-6">Success Response</h4>
+
+<ul>
+  <li>The status code will be either 200, 202, or 204</li>
+  <li>There will be no entity</li>
+</ul>
+
+<h4 id="error-responses-6">Error Responses</h4>
+<ul>
+  <li>TBD</li>
+</ul>
+
+<h3 id="change-the-name-or-tags-of-a-users-feed">Change the name or tags of a user’s feed</h3>
+
+<h4 id="request-7">Request</h4>
+
+<ul>
+  <li>Send a PUT request to the resource “the feed {uri} of a user”
+    <ul>
+      <li>example path: <code>/users/{user-id}/feeds/{feed-uri}</code></li>
+    </ul>
+  </li>
+  <li>The request header <code>Content-Type</code> must be <code>application/json; schema=feedsink.feed.v1.0</code></li>
+  <li>The request header <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.28"><code>If-Unmodified-Since</code></a> must be included
+    <ul>
+      <li>the value should be the date-time at which the user entered the changes</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The request entity should be a JSON object which looks like this:</p>
+
+<pre><code>{
+    "uri": "http://aviflax.com/feed",
+    "name": "Avi’s Silly Blog",
+    "tags": ["river", "arc/staff"],
+}
+</code></pre>
+
+<ul>
+  <li>A tag may contain <code>/</code> to denote that it is heirarchical</li>
+  <li>If the value of <code>uri</code> does not match the path segment <code>feed-uri</code> of the target resource URI path, the request will be rejected</li>
+</ul>
+
+<h4 id="success-response-7">Success Response</h4>
+
+<ul>
+  <li>The status code will be 200 or 202</li>
+  <li>There will be no entity</li>
+</ul>
+
+<h4 id="error-responses-7">Error Responses</h4>
+<p>TBD</p>
+
+    </div>
+    <div id="sidebar">
+        <div id="nav">
+          <h2>Documentation</h2>
+          <ul>
+            <li><a href="/Open-Reader-API">Overview</a></li>
+            <li><a href="/Open-Reader-API/subscription">Subscription</a></li>
+            <li><a href="/Open-Reader-API/stream">Stream</a></li>
+            <li><a href="/Open-Reader-API/tag">Tag</a></li>
+            <li><a href="/Open-Reader-API/authentication">Authentication</a></li>
+			<li><a href="/Open-Reader-API/resources">Resources</a></li>
+          </ul>
+		  <h2>Get involved</h2>
+          <ul>
+            <li><a href="/Open-Reader-API/rssconsensus">The RSS Consensus</a></li>
+          </ul>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="http://lists.ranchero.com/listinfo.cgi/rss-sync-ranchero.com">RSS Sync Mailing List</a></li>
+          </ul>
+      </div>
+      <div id="github">
+        <p>This website is a <a href="https://github.com/rss-sync/Open-Reader-API" target="_blank">public GitHub repository</a>. Please help out by forking the project and adding to it.</p>
+      </div>
+    </div>
+  <script type="text/javascript">
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '516e322e108d7b2dc800019b');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+  </body>
+</html>

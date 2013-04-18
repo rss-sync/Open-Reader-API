@@ -5,7 +5,7 @@ title: Overview
 Placeholder text for the main overview page
 
 TODO
-: - Describe what and why of this
-    - This is a generic API based off of the popular Google Reader API
-    - Aims to standardize the many separate initiatives of cloning the Google Reader API
+: - Describe what and why
+    - This is a open API specification where anybody can contribute ideas
+    - Aims to standardize the many separate sync API initiatives
 - Discuss how people can get involved

@@ -2,7 +2,7 @@
 title: Overview
 ---
 
-This is an effort to define a new **common** feed-syncing API protocol based (or not) on Google Reader. We recognise that we are many – many competing against each other – and many with conflicting agendas. But we come together here, putting aside our differences, to support RSS and the its ecosystem. Recognising that only by sharing a common platform can we make RSS easily consumable and help the average users … [Read the full statement](http://rss-sync.github.io/Open-Reader-API/rssconsensus/).
+This is an effort to define a new **common** feed-syncing API protocol based (or not) on Google Reader. We recognise that we are many – many competing against each other – and many with conflicting agendas. But we come together here, putting aside our differences, to support RSS and the its ecosystem. Recognising that only by sharing a common platform can we make RSS easily consumable and help the average users … [Read the full statement](/Open-Reader-API/rssconsensus/).
 
 This aims to standardize all feed sync API initiatives. 
 

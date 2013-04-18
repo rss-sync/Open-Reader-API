@@ -32,13 +32,10 @@ All this when we instead could share a common platform and could be:
 ### THE RSS CONSENSUS PLEDGE:
 
 1. **One new feed-sync protocol**, based (or not) on the Google Reader API.
-
     * Open and 100% vendor neutral.
     * Implemented by everybody.
     * Cleanly and thoroughly specified.
-
 2. **Further development of this protocol**.
-
     * Adding additional features.
     * Freely extensible by anybody.
 

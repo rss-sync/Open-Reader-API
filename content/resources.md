@@ -36,6 +36,9 @@ title: Resources
 [Feedbin API](https://github.com/feedbin/feedbin-api)
 : [Feedbin](https://feedbin.me)'s REST-style API.
 
+[Netvibes REST API](http://dev.netvibes.com/doc/api/rest)
+: [Netvibes](http://www.netvibes.com/)'s REST-style API.
+
 ## Miscellaneous
 
 * [The RSS-Sync feed corpus](https://github.com/rss-sync/corpus) — examples of real feeds, some of which show problems, from around the web.

@@ -39,6 +39,12 @@ title: Resources
 [Netvibes REST API](http://dev.netvibes.com/doc/api/rest)
 : [Netvibes](http://www.netvibes.com/)'s REST-style API.
 
+[selfoss Restful API](https://github.com/SSilence/selfoss/wiki/Restful-API-for-Apps-or-any-other-external-access)
+: [selfoss](http://selfoss.aditu.de) offers an restful JSON API for applications. If you are a programmer of a mobile app, plugin or any other system which wants to access selfoss then this is your place.
+
+[SAF-protocol](http://saf-protocol.org)
+: The Serverside Aggregated Feeds (SAF) protocol allow multiple lightweight clients to access feeds of data that are checked and fetched by a central server. Or in human speak: like Google Reader, but with a standardized protocol.
+
 ## Miscellaneous
 
 * [The RSS-Sync feed corpus](https://github.com/rss-sync/corpus) — examples of real feeds, some of which show problems, from around the web.

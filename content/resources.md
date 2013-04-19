@@ -45,6 +45,9 @@ title: Resources
 [SAF-protocol](http://saf-protocol.org)
 : The Serverside Aggregated Feeds (SAF) protocol allow multiple lightweight clients to access feeds of data that are checked and fetched by a central server. Or in human speak: like Google Reader, but with a standardized protocol.
 
+[BirdReader API](https://github.com/glynnbird/birdreader/blob/master/API.md)
+: BirdReader not only has a web interface, it also has a clean(ish) RESTful API too, which you can use to build your own front-ends
+
 ## Miscellaneous
 
 * [The RSS-Sync feed corpus](https://github.com/rss-sync/corpus) — examples of real feeds, some of which show problems, from around the web.

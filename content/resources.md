@@ -27,6 +27,15 @@ title: Resources
 [FeedSink API](/Open-Reader-API/resources/feedsink-api/) by Avi Flax of Arc90
 : "… some ideas for a feed syncing API. My firm and I have decided to drop it, so I thought I’d share my documentation ... just in case it might somehow prove even slightly useful."
 
+[NewsBlur API](http://www.newsblur.com/api)
+: "We're quite pleased to point out that this entire API is open-source, including the implementation of the endpoints."
+
+[Tiny Tiny RSS Json API](http://tt-rss.org/redmine/projects/tt-rss/wiki/JsonApiReference)
+: Since version 1.4.0, Tiny Tiny RSS has an API. Terminal based [Newsbeuter](https://github.com/akrennmair/newsbeuter) supports it.
+
+[Feedbin API](https://github.com/feedbin/feedbin-api)
+: [Feedbin](https://feedbin.me)'s REST-style API.
+
 ## Miscellaneous
 
 * [The RSS-Sync feed corpus](https://github.com/rss-sync/corpus) — examples of real feeds, some of which show problems, from around the web.

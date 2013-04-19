@@ -39,7 +39,7 @@ All this when we instead could share a common platform and could be:
     * Adding additional features.
     * Freely extensible by anybody.
 
-If you can support this, please [link to it](/Open-Reader-API/rssconsensus/) from your weblog, with a few words as to why you support it. For further discussion and infomation on the technical aspects, please refer to [The RSS-Sync mailing list](http://lists.ranchero.com/listinfo.cgi/rss-sync-ranchero.com).
+If you can support this, please [link to it](/Open-Reader-API/rssconsensus/) from your weblog or twitter account, with a few words as to why you support it. For further discussion and infomation on the technical aspects, please refer to [The RSS-Sync mailing list](http://lists.ranchero.com/listinfo.cgi/rss-sync-ranchero.com).
 
 Yours truly,
 *Fans of the RSS Consensus*

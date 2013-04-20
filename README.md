@@ -66,6 +66,10 @@ You can use MAMP or a similar setup to view the resulting files or you can insta
 
 ## Updating the live site
 
-The [live site](http://rss-sync.github.io/Open-Reader-API/) lives in the [gh-pages branch](https://github.com/rss-sync/Open-Reader-API/tree/gh-pages). To update the live site, update master locally and run `nanoc compile`. The latest generated output will be in `/output/Open-Reader-API/`.
+The [live site](http://rss-sync.github.io/Open-Reader-API/) lives in the [gh-pages branch](https://github.com/rss-sync/Open-Reader-API/tree/gh-pages). For convenience the gh-pages branch has been added to the main repo as a Git submodule.
 
-In order to update the live content, check out the gh-pages branch in a separate directory, remove the files and copy all of the generated files over. Commit changes and push to complete the update.
+To update the live site, update master locally and run `nanoc compile`. The latest generated output will be in `/output/Open-Reader-API/`.
+
+Move into `/gh-pages` folder, clear it's content with `git rm -r *` and copy the output from the parent folder (`cp -r ../output/Open-Reader-API/ .`). Add all files and commit the changes.
+
+Pushing the gh-branch will update the live site. After a successful push, don't forget to update the master branch so that it's pointer to the submodule will have the proper commit hash stored.

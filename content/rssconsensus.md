@@ -71,12 +71,12 @@ Yours truly,
 
 **Company / Product List** (Alphabetically):
 
-1. ...
+1. [BazQux](http://blog.bazqux.com/2013/04/open-reader-api.html)
 
 
 **Name List:**
 
 If a name is linked, it should go to a permalink for the source of the quote. Add new names at the bottom of the page.
 
-1. ...
+1. [Владимир Шабанов](http://blog.bazqux.com/2013/04/open-reader-api.html): "We need single open vendor neutral feed-sync API."
 

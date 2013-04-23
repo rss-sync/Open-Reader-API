@@ -79,4 +79,4 @@ Yours truly,
 If a name is linked, it should go to a permalink for the source of the quote. Add new names at the bottom of the page.
 
 1. [Владимир Шабанов](http://blog.bazqux.com/2013/04/open-reader-api.html): "We need single open vendor neutral feed-sync API."
-
+2. [Avi Flax](http://aviflax.com/post/i-support-the-rss-consensus-on-the-open-reader-api/): "I support The RSS Consensus on the Open Reader API because feeds are fantastic and we need a vibrant ecosystem."

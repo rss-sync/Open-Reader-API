@@ -1,3 +1,6 @@
+---
+title: FeedSink API
+---
 # FeedSink API
 
 by Avi Flax <avif@arc90.com> of [Arc90](http://arc90.com)

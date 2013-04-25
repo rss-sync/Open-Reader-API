@@ -72,6 +72,7 @@ Yours truly,
 **Company / Product List** (Alphabetically):
 
 1. [BazQux](http://blog.bazqux.com/2013/04/open-reader-api.html)
+2. [FeedHQ](https://feedhq.org/blog/3-supporting-google-reader-api)
 
 
 **Name List:**
@@ -80,3 +81,5 @@ If a name is linked, it should go to a permalink for the source of the quote. Ad
 
 1. [Владимир Шабанов](http://blog.bazqux.com/2013/04/open-reader-api.html): "We need single open vendor neutral feed-sync API."
 2. [Avi Flax](http://aviflax.com/post/i-support-the-rss-consensus-on-the-open-reader-api/): "I support The RSS Consensus on the Open Reader API because feeds are fantastic and we need a vibrant ecosystem."
+3. [Bruno Renié](https://feedhq.org/blog/3-supporting-google-reader-api): "...  it is becoming clear that APIs for feed syncing and reading need to be standardized. This would avoid duplicating work for both server and client developers. FeedHQ fully supports the Open Reader API initiative. We'll do our best to support the standard which will emerge because we think it's best for the end users."
+

@@ -2,7 +2,7 @@
 
 This is the repo for the **[Open Reader API](http://rss-sync.github.io/Open-Reader-API/)** and is built with [nanoc](http://nanoc.ws/).
 
-All submissions are encouraged. To submit a change, fork this repository, commit your changes and send a [pull request](https://help.github.com/articles/using-pull-requests).
+All submissions are encouraged. To submit a change, [fork this repository](https://github.com/rss-sync/Open-Reader-API/fork), commit your changes and send a [pull request](https://help.github.com/articles/using-pull-requests).
 
 ## Making Contributions
 

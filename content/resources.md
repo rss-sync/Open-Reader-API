@@ -34,6 +34,9 @@ APIs listed are **not** Open Reader API compliant as the specification is still 
 [Selfoss Restful API](https://github.com/SSilence/selfoss/wiki/Restful-API-for-Apps-or-any-other-external-access)
 : [selfoss](http://selfoss.aditu.de) offers an restful JSON API for applications. If you are a programmer of a mobile app, plugin or any other system which wants to access selfoss then this is your place.
 
+[Miniflux Services](https://miniflux.app/docs/services.html)
+: [Miniflux](https://miniflux.app/) Offers it as one of their intergrations
+
 ## Unofficial Google Reader Documentation
 
 [undocgoogle 1.0 documentation](http://undoc.in) by Daniel
